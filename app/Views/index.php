@@ -13,6 +13,50 @@
         </center>
     </div>
     <br><br><br>
+
+    <div class="container" style=" background-color: #f3f5f7;">
+        <br>
+        <center>
+            <h4 class="search_title">Realice una busqueda dependiendo de las caracteristicas de su viaje </h4>
+        </center>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputDestino">Tipo de Destino</label>
+                    <select id="inputDestino" class="form-control">
+                        <option selected>Seleccione...</option>
+                        <option>Cascadas</option>
+                        <option>Paramos</option>
+                        <option>Desierto</option>
+                        <option>Playas</option>
+                        <option>Lagunas</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label for="inputPersonas">Tipo de Plan</label>
+                    <select id="inputPersonas" class="form-control">
+                            <option selected>Seleccione...</option>
+                            <option>Plan Familiar</option>
+                            <option>Plan Educativo</option>
+                            <option>Plan Individual</option>
+                    </select>
+                </div>  
+                <div class="form-group col-md-1">
+                    <label for="inputPersonas">Busqueda</label>
+                    <button type="button" class="btn btn-default">
+                        <i class="fas fa-search"></i></span>
+                    </button>
+                </div> 
+
+            </div>
+        </form>
+    </div>
+
+   
+
+
+    <br><br><br>
     <div class="container">
         <div class="row">
             <div class="col">

@@ -81,14 +81,10 @@
         <div class="home" id="inicio">
             <div class="home_background_container prlx_parent">
                 <div class="home_background prlx"
-                    style="background-image:url(<?php echo base_url();?>/public/img/gal4.JPG); transform: translate(0%, -20.6566%) translate3d(0px, 0px, 0px);}">
+                    style="background-image:url(<?php echo base_url();?>/public/img/Letrero.jpeg); transform: translate(0%, -15.6566%) translate3d(0px, 0px, 0px);}">
                 </div>
             </div>
-            <div class="home_content" style="width: 80%;">
-                    <center>
-                    <h1>TURISMO EDUCATIVO Y CIENTÍFICO</h1>
-                    </center>
-            </div>
+            
         </div>
 
 </body>    
