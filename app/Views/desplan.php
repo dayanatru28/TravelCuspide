@@ -1,24 +1,18 @@
-    
-
-    <body>
+ <body>
         <br><br><br>
-        <div class="container">
+        <?php 
+        foreach ($salidasModel as $salidaModel){ ?>
+    <div class="container">
+
         <center>
-            <h1 class="search_title">Desierto de la Tatacoa</h1>
+            <h1 class="search_title"><?php echo $salidaModel['0']['nombreSalida']?></h1>
         </center>
         </div>
 
         <br><br><br>
         <div class="container">
             <center>
-                <h2 class="search_title" style="font-size: 20px;">Descripcion geografica del lugar...Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                 when an unknown printer took a galley of type and scrambled it to make a type 
-                 specimen book. It has survived not only five centuries, but also the leap into
-                  electronic typesetting, remaining essentially unchanged. It was popularised in
-                   the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software
-                     like Aldus PageMaker including versions of Lorem Ipsum.</h2>
+                <h2 class="search_title" style="font-size: 20px;"><?php echo $salidaModel['0']['desSalida']?></h2>
             </center>
         </div>
 
@@ -30,34 +24,34 @@
                     <h1 style="display:none;color: black;" id="h2Title"></h1>
                 </div>
             </div>
-
+            
                 <ul class="cards" id="ulSalida">
                     <div class="row" style="width: 100%;">
                         <div class="col-sm-9">
                             <li class="cards__item">
                                 <div class="card">
                                     <div id="carousel" class="carousel slide" data-ride="carousel" style="max-width:100%; ">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carousel" data-slide-to="1"></li>
-                                            <li data-target="#carousel" data-slide-to="2"></li>
-                                        </ol>
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal1.JPG" alt="First slide">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                </div>
+                                            <!-- Trae la informacion de las imagenes de cada lugar -->
+                                            <?php 
+                                            foreach ($imagenesModel as $imagenModel){   
+                                            ?>  
+                                                    <img class="d-block w-100" src="<?php echo base_url(); echo $imagenModel[0]['direcFoto']?>" alt="Second slide">
+                                                    <div class="carousel-caption d-none d-md-block">
+        +                                           </div>
                                             </div>
+
                                             <div class="carousel-item">
-                                                <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal2.JPG" alt="Second slide">
-                                                <div class="carousel-caption d-none d-md-block">
-        +                                        </div>
+                                            <?php 
+                                                for ($i=1; $i < count($imagenModel) ; $i++) {    
+                                            ?> 
+                                                    <img class="d-block w-100" src="<?php echo base_url(); echo $imagenModel[$i]['direcFoto']?>" alt="Second slide">
+                                                    <div class="carousel-caption d-none d-md-block">
+        +                                           </div>
+                                            <?php }   } ?>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal3.JPG" alt="Third slide">
-                                                <div class="carousel-caption d-none d-md-block">
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                         <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -97,31 +91,18 @@
     </div>
 
     <br>
-        <div class="container">
-                    <h3 class="search_title">Observatorio astronomico</h3>
-                    <h4 class="search_title">It is a long established fact that a reader will be
-                         distracted by the readable content of a page when looking at its layout. 
-                         The point of using Lorem Ipsum is that it has a more-or-less normal 
-                         distribution of letters, as opposed to using 'Content here, content here',
-                          making it look like readable English.</h4> <br>
-        </div>
-        <div class="container">
-                    <h3 class="search_title">Mirador de Miguelito</h3>
-                    <h4 class="search_title">It is a long established fact that a reader will be
-                         distracted by the readable content of a page when looking at its layout. 
-                         The point of using Lorem Ipsum is that it has a more-or-less normal 
-                         distribution of letters, as opposed to using 'Content here, content here',
-                          making it look like readable English.</h4> <br>
-        </div>
-        <div class="container">
-                    <h3 class="search_title">Museo Villavieja</h3>
-                    <h4 class="search_title">It is a long established fact that a reader will be
-                         distracted by the readable content of a page when looking at its layout. 
-                         The point of using Lorem Ipsum is that it has a more-or-less normal 
-                         distribution of letters, as opposed to using 'Content here, content here',
-                          making it look like readable English.</h4> <br>
-        </div>
 
+    <?php 
+        //Obtengo la informacion de los sitios de interes
+        foreach ($sitiosInteresModel as $sitioInteresModel){ 
+            for ($i=0; $i < count($sitioInteresModel) ; $i++) {    
+        ?>
+
+        <div class="container">
+                    <h3 class="search_title"><?php echo $sitioInteresModel[$i]['nombreSitio']?></h3>
+                    <h4 class="search_title"><?php echo $sitioInteresModel[$i]['desSitio']?></h4> <br>
+        </div>
+        <?php } } ?>
    
     <br><br><br>
 
@@ -137,18 +118,14 @@
                   <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" >
                         <div class="container">
-                            <h4> Visita al Desierto Tatacoa con:  Ingreso al Museo paleontológico y Recorrido guiado por el desierto</h4>
-                            <h4> Ingreso observatorio astronómico Astro Sur e inducción astronómica. (Sujeto al clima) </h4>
-                            <h4> Ingreso y visita guiada al Parque Arqueológico San Agustín, recorrido a  mesitas A, B, C Y D, Fuente ceremonial de Lavapatas, Bosque de las estatuas y Museo Arqueológico. </h4>
-                            <h4> Recorrido por el  anillo turístico.</h4>
+                            <h4> <?php echo $salidaModel['0']['incluyeSalida']?></h4>
                          </div>
                     </div>
                             
                     
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="container">
-                            <h4> Alimentacion no estipulada </h4>
-                            <h4> Hospedaje </h4>
+                            <h4> <?php echo $salidaModel['0']['noIncluyeSalida']?> </h4>
                             </div>
                     </div>
                   </div>                
@@ -164,4 +141,5 @@
 
         <br><br>
     </body>
+  <?php }?>
 </html>    

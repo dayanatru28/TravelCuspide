@@ -89,6 +89,7 @@
                                     <li data-target="#carousel" data-slide-to="2"></li>
                                 </ol>
                                 <div class="carousel-inner">
+                                                            
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal1.JPG" alt="First slide">
                                         <div class="carousel-caption d-none d-md-block">
@@ -124,7 +125,7 @@
                                     <center><h2>En el Huila</h2></center>
                                     <br>
                                 </div>
-                                <a class="btn btn-dark btn-block" href="<?php echo base_url(); ?>/Ofertasdep/index" role="button">Ver mas informacion</a>
+                                <a class="btn btn-dark btn-block" href="<?php echo base_url(); ?>/Ofertasdep/mostrar?idClasificacion=1" role="button">Ver mas informacion</a>
                             </div>
                         </div>
                     </li>
@@ -175,7 +176,7 @@
                                         <center><h2>A nivel Nacional</h2></center>
                                         <br>
                                     </div>
-                                    <a class="btn btn-dark btn-block" href="ofertasnacionales.php" role="button">Ver mas informacion</a>
+                                    <a class="btn btn-dark btn-block" href="<?php echo base_url(); ?>/Ofertasdep/mostrar?idClasificacion=2" role="button">Ver mas informacion</a>
                                 </div>
                             </div>
                         </li>

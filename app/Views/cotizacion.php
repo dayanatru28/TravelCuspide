@@ -1,6 +1,13 @@
 
     <body>
         <br><br><br>
+
+    <?php var_dump($sitiosInteresModel) ?>;
+    <?php 
+        foreach ($sitiosInteresModel as $sitioInteresModel){ 
+             echo $sitioInteresModel['0']['nombreSitio'];
+        }?>
+
     <div class="container">
         <div class="row">
             <div class="col">

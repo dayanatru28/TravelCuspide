@@ -32,102 +32,33 @@
 
         <ul class="cards" id="ulSalida">
             <div class="row" style="width: 100%;">
+            <!--Colocar informacion traida de la base de datos -->
+            <?php
+            foreach ($salidasModel as $salidaModel){ ?>
                 <div class="col-sm-4" style="margin-top:3%">
                     <li class="cards__item">
                         <div class="card">
                             <div class="card__image card__image--fence">
-                                <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal1.JPG" >
+                                <img class="d-block w-100" src="<?php echo base_url();echo $salidaModel['fotoSalida'] ?>" >
                             </div>
                             <div class="card__content">
                                     <div class="card__title" style="color: black ;background-color: #ffb606">
                                         <br>
-                                        <center><h3>Desierto de la Tatacoa</h3></center>
+                                        <center><h3><?php echo $salidaModel['nombreSalida']?></h3></center>
                                         <br>
                                      </div>
                                 <div class="card__text" style="color: black ;background-color: #ffff">
                                     <br>
-                                    <center><h4>El Desierto de la Tatacoa es la segunda zona árida más extensa
-                                     de Colombia después de la Península de La Guajira. Es uno de los escenarios
-                                      naturales más atractivos de Colombia, de tierra de color ocre y gris con 
-                                      pincelazos del verde de los cactus.</h4></center>
+                                    <center><h4><?php echo $salidaModel['desSalida'] ?></h4></center>
                                     <br>
                                 </div>
-                                <a class="btn btn-dark btn-block" href="<?php echo base_url(); ?>/Desplan/index"  role="button">Ver Plan</a>
+                                <a class="btn btn-dark btn-block" href="<?php echo base_url(); ?>/Desplan/mostrar?idSalida=<?php echo $salidaModel['idSalida'];?>"  role="button">Ver Plan</a>
                             </div>
                         </div>
                     </li>
                 </div>
+            <?php } ?>
 
-                <div class="col-sm-4"style="margin-top:3%">
-                    <li class="cards__item">
-                        <div class="card">
-                            <div class="card__image card__image--fence">
-                                    <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal2.JPG" >
-                                </div>
-
-                                <div class="card__content">
-                                    <div class="card__title" style="color: black ;background-color: #ffb606">
-                                    <br>
-                                    <center><h3>Cascada del fraile</h3></center>
-                                    <br>
-                                    </div>
-                                <div class="card__text" style="color: black ;background-color: #ffff">
-                                    <br>
-                                    <center><h4>Una cascada de 5 pisos “El Fraile” Palermo, Huila – Colombia.</h4></center>
-                                    <br>
-                                </div>
-                                <a class="btn btn-dark btn-block" href="ofertasdepartamentales.php" role="button">Ver Plan</a>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-
-                <div class="col-sm-4" style="margin-top:3%">
-                        <li class="cards__item">
-                                <div class="card__image card__image--fence">
-                                        <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal3.JPG" >
-                                    </div>
-                                <div class="card__content">
-                                    <div class="card__title" style="color: black ;background-color: #ffb606">
-                                    <br>
-                                        <center><h3>Cueva de los guacharos</h3></center>
-                                    <br>
-                                    </div>
-                                    <div class="card__text" style="color: black ;background-color: #ffff">
-                                    <br>
-                                         <center><h4>El parque nacional natural Cueva de los Guácharos es una de 
-                                    las 59 áreas protegidas del sistema de Parques Nacionales Naturales 
-                                    de Colombia y la más antigua, creada en 1960. El parque cubre una superficie de 90 km²..</h4></center>
-                                    <br>
-                                    </div>
-                                    <a class="btn btn-dark btn-block" href="ofertasdepartamentales.php" role="button">Ver Plan</a>
-                                </div>
-                            
-                        </li>
-                    </div>
-
-                    <div class="col-sm-4" style="margin-top:3%">
-                    <li class="cards__item">
-                        <div class="card">
-                            <div class="card__image card__image--fence">
-                                    <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal4.JPG" >
-                                </div>
-                            <div class="card__content">
-                                    <div class="card__title" style="color: black ;background-color: #ffb606">
-                                    <br>
-                                    <center><h3>Cascada del fraile</h3></center>
-                                    <br>
-                                    </div>
-                                <div class="card__text" style="color: black ;background-color: #ffff">
-                                    <br>
-                                    <center><h4>Una cascada de 5 pisos “El Fraile” Palermo, Huila – Colombia.</h4></center>
-                                    <br>
-                                </div>
-                                <a class="btn btn-dark btn-block" href="ofertasdepartamentales.php" role="button">Ver Plan</a>
-                            </div>
-                        </div>
-                    </li>
-                </div>
 
             </div>
         </ul>
