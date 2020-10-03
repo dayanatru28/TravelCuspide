@@ -135,7 +135,7 @@
  <br> <br>   
 <!-- Boton de reservas-->
 <center>
-    <a class="btn btn-danger btn-lg" href="<?php echo base_url(); ?>/Cotizacion/index"  role="button">Realizar la cotización</a>
+    <a class="btn btn-danger btn-lg" href="<?php echo base_url(); ?>/Cotizacion/mostrar?idSalida=<?php echo $salidaModel['0']['idSalida'];?>"  role="button">Realizar la cotización de este plan</a>
 </center>
 
 

@@ -2,12 +2,6 @@
     <body>
         <br><br><br>
 
-    <?php var_dump($sitiosInteresModel) ?>;
-    <?php 
-        foreach ($sitiosInteresModel as $sitioInteresModel){ 
-             echo $sitioInteresModel['0']['nombreSitio'];
-        }?>
-
     <div class="container">
         <div class="row">
             <div class="col">
@@ -23,85 +17,91 @@
                     <h4 class="search_title"> Por favor diligencie el formulario. Con estos datos lo contáctaremos para enviarle la información solicitada</h4> <br>
         </div>
 
-   
+ <!-- Utiliza el helper form para la recepcion de informacion -->
+ <?php
+        echo form_open('/cotizacion/insertar');
+ ?>      
 
 
 <!--formulario-->
     <div class=container>
             <form>
                 <div class="form-group">
-                    <label for="inputName">Nombre completo</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Pepito Perez">
+                    <?php 
+                    echo form_label('Nombre Completo','nombreCoti');
+                    echo form_input(array('name'=>'nombreCoti','class'=>'form-control','placeholder'=>'Pepito Perez'));
+                    ?>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail4">Correo electronico</label>
-                        <input type="email" class="form-control" id="inputEmail4"placeholder="pepitoperez@gmail.com">
+                        <?php 
+                        echo form_label('Correo Electronico','correoCoti');
+                        echo form_input(array('name'=>'correoCoti','class'=>'form-control', 'placeholder'=>'pepitoperez@gmail.com'));
+                        ?>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputCel">Celular</label>
-                        <input type="text" class="form-control" id="inputCel">
+                        <?php 
+                        echo form_label('Celular','celularCoti');
+                        echo form_input(array('name'=>'celularCoti','class'=>'form-control', 'placeholder'=>'3212020029'));
+                        ?>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress">Direccion</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
+                    <?php 
+                        echo form_label('Direccion','direccionCoti');
+                        echo form_input(array('name'=>'direccionCoti','class'=>'form-control', 'placeholder'=>'1234 Main St Municipio, Departamento'));
+                     ?>
+                </div>                
                 
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputDestino">Destino</label>
-                        <select id="inputDestino" class="form-control">
-                            <option selected>Seleccione...</option>
-                            <option>Desierto de la tatacoa</option>
-                            <option>Cascada del Fraile</option>
-                            <option>San agustin</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                         <label for="inputPersonas">Rango de Personas</label>
-                        <select id="inputPersonas" class="form-control">
-                                <option>1-5</option>
-                                <option>5-10</option>
-                                <option>10-15</option>
-                                <option>15-25</option>
-                                <option>25 o más</option>
-                        </select>
-                    </div>
-                    
+                 <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <?php 
+                                echo form_label('Destino','destino');
+                                echo form_input(array('name'=>'destino','class'=>'form-control','value'=>$salidasModel[0]['nombreSalida']));               
+                             ?> 
+                        </div>
+                        <div class="form-group col-md-4">
+                             <?php 
+                                echo form_label('Cantidad de Personas','cantPersonas');
+                                echo form_input(array('name'=>'cantPersonas','class'=>'form-control', 'placeholder'=>'1, 2, 3... 10'));
+                            ?>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <?php 
+                                echo form_label('Cantidad de Niños','cantNinos');
+                                echo form_input(array('name'=>'cantNinos','class'=>'form-control', 'placeholder'=>'1, 2, 3... 10'));
+                            ?>
+                        </div>
                 </div>
+
                 <div class="form-group">
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="start">Dia de salida prevista:</label>
+                        <div class="form-group col-md-2">
+                            <?php 
+                                echo form_label('Dia de salida prevista:','diaSalida');?>
                                 <br>
-                                <input type="date" id="start" name="trip-start"
-                                    value="2020-08-19"
-                                    min="2020-01-01" max="2021-12-31">
+                                <input type="date" name="trip-start" id="start" value="<?php echo set_value('trip-start'); ?> " min="2020-01-01" max="2021-12-31"  />
                         </div> 
-                        <div class="form-group col-md-6">
-                            <label for="inputDias">Cantidad de dias de viaje</label>
-                            <select id="inputDestino" class="form-control">
-                                <option selected>Seleccione...</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
+                        <div class="form-group col-md-10">
+                            <?php 
+                                echo form_label('Cantidad de dias de viaje','cantDias');
+                                echo form_input(array('name'=>'cantDias','class'=>'form-control', 'placeholder'=>'1, 2, 3... 10'));
+                            ?>
                         </div> 
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Mensaje</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <?php 
+                            echo form_label('Mensaje','mensajeCoti');
+                            echo form_textarea(array('name'=>'mensajeCoti','class'=>'form-control'));
+                        ?>
                 </div>
                 <center>
-                    <button type="submit" class="btn btn-danger">Enviar cotización</button>
-                </center>
+                    <?php echo form_submit('insertar','Enviar Cotizacion','class="btn btn-danger"'); ?>
+                <center>
             </form>
     </div>
+    <?php echo form_close(); ?>
 <br><br>
 
 

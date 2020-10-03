@@ -68,6 +68,7 @@
     </div>
     <br><br><br>
 
+
     <!-- ofertas Nivel Huila- Nacional -->
 
     <div class="container" style=" background-color: #f3f5f7;">
@@ -83,32 +84,30 @@
                     <li class="cards__item">
                         <div class="card">
                             <div id="carousel" class="carousel slide" data-ride="carousel" style="max-width:100%; ">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel" data-slide-to="1"></li>
-                                    <li data-target="#carousel" data-slide-to="2"></li>
-                                </ol>
                                 <div class="carousel-inner">
-                                                            
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal1.JPG" alt="First slide">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h3>Desierto de la tatacoa</h3>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal2.JPG" alt="Second slide">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h3>San Agustin</h4>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal3.JPG" alt="Third slide">
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <h3>Cascada del fraile</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <!-- Trae la informacion de las imagenes de cada lugar -->
+                                            <?php 
+                                            foreach ($salidasHuilaModel as $salidaHuilaModel){
+                                            ?>  
+                                                    <img class="d-block w-100" src="<?php echo base_url(); echo $salidaHuilaModel[0]['fotoSalida']?>" alt="Second slide">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                    <h3><?php echo $salidaHuilaModel[0]['nombreSalida']?></h3>
+                                                  </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                            <?php 
+                                                for ($i=1; $i < count($salidaHuilaModel) ; $i++) {    
+                                            ?> 
+                                                    <img class="d-block w-100" src="<?php echo base_url(); echo $salidaHuilaModel[$i]['fotoSalida']?>" alt="Second slide">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                    <h3><?php echo $salidaHuilaModel[$i]['nombreSalida']?></h3>
+                                                   </div>
+                                            <?php }   } ?>
+                                     </div> 
+                                </div>                        
+                                
                                 <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
@@ -135,30 +134,28 @@
                         <li class="cards__item">
                             <div class="card">
                                 <div id="carousel" class="carousel slide" data-ride="carousel" style="max-width:100%; ">
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                                        <li data-target="#carousel" data-slide-to="1"></li>
-                                        <li data-target="#carousel" data-slide-to="2"></li>
-                                    </ol>
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal1.JPG" alt="First slide">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h3>Desierto de la tatacoa</h3>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal2.JPG" alt="Second slide">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h3>San Agustin</h3>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block w-100" src="<?php echo base_url();?>/public/img/gal3.JPG" alt="Third slide">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h3>Cascada del fraile</h3>
-                                            </div>
-                                        </div>
+                                                <!-- Trae la informacion de las imagenes de cada lugar -->
+                                                <?php 
+                                                foreach ($salidasNacionalModel as $salidasNacionalModel){
+                                                ?>  
+                                                        <img class="d-block w-100" src="<?php echo base_url(); echo $salidasNacionalModel[0]['fotoSalida']?>" alt="Second slide">
+                                                        <div class="carousel-caption d-none d-md-block">
+                                                        <h3><?php echo $salidasNacionalModel[0]['nombreSalida']?></h3>
+                                                    </div>
+                                                </div>
+
+                                                <div class="carousel-item">
+                                                <?php 
+                                                    for ($i=1; $i < count($salidasNacionalModel) ; $i++) {    
+                                                ?> 
+                                                        <img class="d-block w-100" src="<?php echo base_url(); echo $salidasNacionalModel[$i]['fotoSalida']?>" alt="Second slide">
+                                                        <div class="carousel-caption d-none d-md-block">
+                                                        <h3><?php echo $salidasNacionalModel[$i]['nombreSalida']?></h3>
+                                                    </div>
+                                                <?php }   } ?>
+                                        </div> 
                                     </div>
                                     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

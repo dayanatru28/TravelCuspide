@@ -17,7 +17,11 @@ class Home extends BaseController
 		$salidasNacionalModel= $salidasModel->where('idClasificacion','2')->findAll();
 		$salidasNacionalModel=array('salidasNacionalModel'=>$salidasNacionalModel);
 
-		$estructura=view('head').view('header').view('index',$salidasHuilaModel,$salidasNacionalModel).view('footer');
+		$datos['salidasHuilaModel']=$salidasHuilaModel;
+		$datos['salidasNacionalModel']=$salidasNacionalModel;
+
+
+		$estructura=view('head').view('header').view('index',$datos).view('footer');
 		return $estructura;
 	}
 
