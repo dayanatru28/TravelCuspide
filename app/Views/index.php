@@ -19,38 +19,34 @@
         <center>
             <h4 class="search_title">Realice una busqueda dependiendo de las caracteristicas de su viaje </h4>
         </center>
+
+        <?php
+        echo form_open('/ofertasBuscador/mostrar');
+        ?>  
         <form>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputDestino">Tipo de Destino</label>
-                    <select id="inputDestino" class="form-control">
-                        <option selected>Seleccione...</option>
-                        <option>Cascadas</option>
-                        <option>Paramos</option>
-                        <option>Desierto</option>
-                        <option>Playas</option>
-                        <option>Lagunas</option>
-                    </select>
+                    <?php 
+                    echo form_label('Tipo de Salida','tipoSalida');
+                    echo form_dropdown('tipoSalida', $tiposSalida);
+                    ?>
                 </div>
 
                 <div class="form-group col-md-5">
-                    <label for="inputPersonas">Tipo de Plan</label>
-                    <select id="inputPersonas" class="form-control">
-                            <option selected>Seleccione...</option>
-                            <option>Plan Familiar</option>
-                            <option>Plan Educativo</option>
-                            <option>Plan Individual</option>
-                    </select>
+                    <?php 
+                    echo form_label('Tipo de Plan','tipoPlan');
+                    echo form_dropdown('tipoPlan', $tiposPlan);
+                    ?>
                 </div>  
+                
                 <div class="form-group col-md-1">
                     <label for="inputPersonas">Busqueda</label>
-                    <button type="button" class="btn btn-default">
-                        <i class="fas fa-search"></i></span>
-                    </button>
+                    <?php echo form_submit('mostrar','Buscar','class="btn btn-danger"'); ?>
                 </div> 
 
             </div>
         </form>
+        <?php echo form_close(); ?>
     </div>
 
    
@@ -61,7 +57,7 @@
         <div class="row">
             <div class="col">
                 <div class="section_title text-center">
-                    <h1>Nuetras Ofertas</h1>
+                    <h1>Nuestras Ofertas</h1>
                 </div>
             </div>
         </div>
@@ -92,22 +88,23 @@
                                             ?>  
                                                     <img class="d-block w-100" src="<?php echo base_url(); echo $salidaHuilaModel[0]['fotoSalida']?>" alt="Second slide">
                                                     <div class="carousel-caption d-none d-md-block">
-                                                    <h3><?php echo $salidaHuilaModel[0]['nombreSalida']?></h3>
+                                                        <h3><?php echo $salidaHuilaModel[0]['nombreSalida']?></h3>
                                                   </div>
-                                            </div>
-
-                                            <div class="carousel-item">
+                                    </div>
                                             <?php 
                                                 for ($i=1; $i < count($salidaHuilaModel) ; $i++) {    
                                             ?> 
+                                                    <div class="carousel-item">
                                                     <img class="d-block w-100" src="<?php echo base_url(); echo $salidaHuilaModel[$i]['fotoSalida']?>" alt="Second slide">
                                                     <div class="carousel-caption d-none d-md-block">
-                                                    <h3><?php echo $salidaHuilaModel[$i]['nombreSalida']?></h3>
+                                                        <h3><?php echo $salidaHuilaModel[$i]['nombreSalida']?></h3>
                                                    </div>
-                                            <?php }   } ?>
-                                     </div> 
-                                </div>                        
-                                
+                                                   </div> 
+                                            <?php }  
+                                        } ?>
+                                       
+                                                        
+                                 </div> 
                                 <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
