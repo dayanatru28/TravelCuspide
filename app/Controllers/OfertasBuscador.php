@@ -35,7 +35,7 @@ class OfertasBuscador extends BaseController
         $salidasModel=$salidasModel->like($comparaciones)->findAll();
         $salidasModel=array('salidasModel'=>$salidasModel);
 
-        $estructura=view('head').view('header').view('ofertasBuscador',$salidasModel).view('footer');
+        $estructura=view('head').view('header').view('ofertasdepartamentales',$salidasModel).view('footer');
 		    return $estructura;
 
     }

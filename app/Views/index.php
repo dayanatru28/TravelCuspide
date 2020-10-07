@@ -28,6 +28,7 @@
                 <div class="form-group col-md-6">
                     <?php 
                     echo form_label('Tipo de Salida','tipoSalida');
+                    ?></br><?php
                     echo form_dropdown('tipoSalida', $tiposSalida);
                     ?>
                 </div>
@@ -35,6 +36,7 @@
                 <div class="form-group col-md-5">
                     <?php 
                     echo form_label('Tipo de Plan','tipoPlan');
+                    ?></br><?php
                     echo form_dropdown('tipoPlan', $tiposPlan);
                     ?>
                 </div>  
@@ -139,20 +141,19 @@
                                                 ?>  
                                                         <img class="d-block w-100" src="<?php echo base_url(); echo $salidasNacionalModel[0]['fotoSalida']?>" alt="Second slide">
                                                         <div class="carousel-caption d-none d-md-block">
-                                                        <h3><?php echo $salidasNacionalModel[0]['nombreSalida']?></h3>
-                                                    </div>
-                                                </div>
-
-                                                <div class="carousel-item">
+                                                            <h3><?php echo $salidasNacionalModel[0]['nombreSalida']?></h3>
+                                                        </div>
+                                        </div>
                                                 <?php 
                                                     for ($i=1; $i < count($salidasNacionalModel) ; $i++) {    
                                                 ?> 
-                                                        <img class="d-block w-100" src="<?php echo base_url(); echo $salidasNacionalModel[$i]['fotoSalida']?>" alt="Second slide">
-                                                        <div class="carousel-caption d-none d-md-block">
+                                                <div class="carousel-item">
+                                                      <img class="d-block w-100" src="<?php echo base_url(); echo $salidasNacionalModel[$i]['fotoSalida']?>" alt="Second slide">
+                                                     <div class="carousel-caption d-none d-md-block">
                                                         <h3><?php echo $salidasNacionalModel[$i]['nombreSalida']?></h3>
-                                                    </div>
+                                                     </div>
+                                                </div>
                                                 <?php }   } ?>
-                                        </div> 
                                     </div>
                                     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

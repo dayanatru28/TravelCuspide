@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col">
                 <div class="section_title text-center">
-                    <h1>Planes turisticos en el Huila</h1>
+                    <h1>Ofertas Turisticas</h1>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="container">
         <center>
             <h3 class="search_title">Cuspide nos brinda la posibilidad de recorrer muchos 
-            de los lugares maravillosos que posee el departamento del Huila. Quebradas, desiertos, paramos todo en un solo lugar.</h3>
+            de los lugares maravillosos que posee nuestro Pais... Quebradas, desiertos, paramos todo en un solo lugar.</h3>
         </center>
     </div>
     <br><br><br>

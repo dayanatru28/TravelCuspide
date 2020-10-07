@@ -46,7 +46,11 @@ class Cotizacion extends BaseController
 		);
 		
 		if($CotizacionesModel->insert($data)===false)	{
-			echo "Error";
+			echo ("Eey.. No podemos agregar tu solicitud");
+		}
+		else{
+			$estructura=view('head').view('header').view('envioexitoso').view('footer');
+			return $estructura;
 		}
 		
 		

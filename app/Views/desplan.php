@@ -39,18 +39,20 @@
                                             ?>  
                                                     <img class="d-block w-100" src="<?php echo base_url(); echo $imagenModel[0]['direcFoto']?>" alt="Second slide">
                                                     <div class="carousel-caption d-none d-md-block">
-        +                                           </div>
+                                                  </div>
                                             </div>
 
-                                            <div class="carousel-item">
+                                            
                                             <?php 
                                                 for ($i=1; $i < count($imagenModel) ; $i++) {    
-                                            ?> 
+                                            ?>      
+                                                <div class="carousel-item">
                                                     <img class="d-block w-100" src="<?php echo base_url(); echo $imagenModel[$i]['direcFoto']?>" alt="Second slide">
                                                     <div class="carousel-caption d-none d-md-block">
-        +                                           </div>
+                                                    </div>
+                                                </div>
                                             <?php }   } ?>
-                                            </div>
+                                           
                                             
                                         </div>
                                         <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">

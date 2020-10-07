@@ -1,4 +1,3 @@
-
     <body>
         <br><br><br>
 
@@ -19,6 +18,7 @@
 
  <!-- Utiliza el helper form para la recepcion de informacion -->
  <?php
+        
         echo form_open('/cotizacion/insertar');
  ?>      
 
@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <?php 
                     echo form_label('Nombre Completo','nombreCoti');
-                    echo form_input(array('name'=>'nombreCoti','class'=>'form-control','placeholder'=>'Pepito Perez'));
+                    echo form_input(array('name'=>'nombreCoti','class'=>'form-control','placeholder'=>'Pepito Perez','required'));
                     ?>
                 </div>
                 <div class="form-row">
