@@ -16,7 +16,6 @@ class Ofertasdep extends BaseController
 
 	public function mostrar(){
 
-
 			//Busqueda de paquetes turisticos por clasificacion
 			$salidasModel= new SalidasModel();
 			

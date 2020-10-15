@@ -16,16 +16,16 @@
                     <h4 class="search_title"> Por favor diligencie el formulario. Con estos datos lo contáctaremos para enviarle la información solicitada</h4> <br>
         </div>
 
- <!-- Utiliza el helper form para la recepcion de informacion -->
- <?php
+ <!-- Utiliza el helper form para la recepcion de informacion 
+
         
-        echo form_open('/cotizacion/insertar');
- ?>      
+       echo form_open('/cotizacion/insertar');-->
+     
 
 
 <!--formulario-->
     <div class=container>
-            <form>
+          <form method="post" action="<?php echo base_url('/cotizacion/insertar') ?>">
                 <div class="form-group">
                     <?php 
                     echo form_label('Nombre Completo','nombreCoti');

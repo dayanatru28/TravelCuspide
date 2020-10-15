@@ -70,9 +70,7 @@
                         </div>
 
                         <div class="col-sm-3" style="width: 300; height: 300;">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.6152384552493!2d-75.28706688573702!3d2.
-                                                926433155298687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3b747af131f6bf%3A0x17c13dcfe737605b!2sCl.
-                                                +6+%238-54%2C+Neiva%2C+Huila!5e0!3m2!1sen!2sco!4v1555632772692!5m2!1sen!2sco" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <iframe src="<?php echo $salidaModel['0']['dirMapa']?>" frameborder="0" style="border:0" allowfullscreen></iframe>
 
                         </div>
                     </div>
