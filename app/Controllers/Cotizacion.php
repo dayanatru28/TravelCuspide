@@ -31,8 +31,6 @@ class Cotizacion extends BaseController
 	}
 
 	public function insertar(){
-		$this->sendMail();
-		$this->sendMailCorporacion();
 		$CotizacionesModel= new CotizacionesModel();
 		$request=\Config\Services::request();
 		$data = array(
@@ -52,6 +50,8 @@ class Cotizacion extends BaseController
 			echo ("Eey.. No podemos agregar tu solicitud");
 		}
 		else{
+			$this->sendMail();
+			$this->sendMailCorporacion();
 			$estructura=view('head').view('header').view('envioexitoso').view('footer');
 			return $estructura;
 		}	
@@ -103,6 +103,7 @@ class Cotizacion extends BaseController
 		$to = ('u20161144636@usco.edu.co');
 		$subject = ('Cotizacion Corporacion Cuspide');
 		$nombre=$request->getPostGet('nombreCoti');
+		$correo=$request->getPostGet('correoCoti');
 		$celular=$request->getPostGet('celularCoti');
 		$direccion=$request->getPostGet('direccionCoti');
 		$destino=$request->getPostGet('destino');
@@ -112,7 +113,7 @@ class Cotizacion extends BaseController
 		$cantDias=$request->getPostGet('cantDias');
 		$mensajeCoti=$request->getPostGet('mensajeCoti');
 
-		$message =('Se ha realizado la cotizacion sobre un viaje a nombre de '.$nombre.' con correo electronico '.$to. ' y celular '.$celular. 
+		$message =('Se ha realizado la cotizacion sobre un viaje a nombre de '.$nombre.' con correo electronico '.$correo. ' y celular '.$celular. 
 		' Para un viaje desde: '.$direccion. ' hacia: '.$destino. ' Cantidad de personas a viajar: '.$cantPersonas. ' Cantidad de niños: '.$cantNinos.
 		' Dia previsto de la salida: '.$diaSalida. ' Duracion prevista del viaje: '.$cantDias. ' Mensaje Final. '.$mensajeCoti);
         

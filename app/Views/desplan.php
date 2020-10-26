@@ -31,7 +31,7 @@
                             <li class="cards__item">
                                 <div class="card">
                                     <div id="carousel" class="carousel slide" data-ride="carousel" style="max-width:100%; ">
-                                        <div class="carousel-inner">
+                                        <div class="carousel-inner" style="width: 100%;height: 600px">
                                             <div class="carousel-item active">
                                             <!-- Trae la informacion de las imagenes de cada lugar -->
                                             <?php 
