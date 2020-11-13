@@ -1,18 +1,12 @@
 
 <body>
 
-    <!--Header-->
+
+    <!--Header-->  
+
+
 
     <!--Inicio-->
-
-    <!--Imagen de inicio-->   
-
-    <div class="home" id="inicio">
-            <div class="home_background_container prlx_parent">
-                <img src="<?php echo base_url();?>/public/img/Letrero.jpeg" class="img-fluid" alt="Responsive image">
-            </div>
-            
-        </div>
 
     <!--Barra de navegacion-->  
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f5b003;"> 
@@ -25,11 +19,23 @@
                 <a class="nav-link active" href="<?php echo base_url(); ?>/Home/index">Inicio <span class="sr-only">(current)</span></a>
                 <a class="nav-link" href="<?php echo base_url(); ?>/Ofertasdep/mostrar?idClasificacion=1">Ofertas Departamentales</a>
                 <a class="nav-link" href="<?php echo base_url(); ?>/Ofertasdep/mostrar?idClasificacion=2">Ofertas Nacionales</a>
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="<?php echo base_url(); ?>/Reservaciones/index">Reservaciones</a>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!--Imagen de inicio-->   
+    <div class="home" id="inicio">
+            <div class="home_background_container prlx_parent">
+                <div class="home_background prlx"
+                    style="background-image:url(http://localhost/AdminTravelCode/public/img/Letrero.jpeg); transform: translate(0%, -15.6566%)}">
+                </div>
+            </div>
+            
+    </div>
+
+    
 
 </body>    
 </html>

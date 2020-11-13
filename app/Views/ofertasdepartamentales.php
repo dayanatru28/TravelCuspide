@@ -39,7 +39,7 @@
                     <li class="cards__item">
                         <div class="card">
                             <div class="card__image card__image--fence">
-                                <img class="d-block w-100" src="<?php echo base_url();echo $salidaModel['fotoSalida'] ?>" >
+                                <img class="d-block w-100" src="http://localhost/AdminTravelCode/<?php echo $salidaModel['fotoSalida'] ?>" >
                             </div>
                             <div class="card__content">
                                     <div class="card__title" style="color: black ;background-color: #ffb606">

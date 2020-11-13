@@ -293,25 +293,25 @@ section
 
 .header
 {
-	position: fixed;
-	overflow: hidden;
-	padding: 20px 10px;
-	top: 10px;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
-	transform: translateX(-50%);
-	width: 1400px;
-	height: 104px;
-	background: rgba(255,255,255,0.94);
-	z-index: 10;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
+position: fixed;
+overflow: hidden;
+padding: 20px 10px;
+top: 10px;
+left: 50%;
+-webkit-transform: translateX(-50%);
+-moz-transform: translateX(-50%);
+-ms-transform: translateX(-50%);
+-o-transform: translateX(-50%);
+transform: translateX(-50%);
+width: 1400px;
+height: 104px;
+background: rgba(255,255,255,0.94);
+z-index: 10;
+-webkit-transition: all 200ms ease;
+-moz-transition: all 200ms ease;
+-ms-transition: all 200ms ease;
+-o-transition: all 200ms ease;
+transition: all 200ms ease;
 }
 .header.scrolled
 {	
@@ -408,19 +408,12 @@ section
 
 .header_side
 {
-	width: 297px;
+	width: 2px;
 	height: 100%;
 	background: #ffb606;
 }
 
-.header_side audio
-{
-        width: 100%;
-		height: 29px;
-		padding-left: 12px;
-        padding-right: 12px;
-        margin-top: 0px;
-}
+
 .header_side li a 
 {
     width: 100%;
@@ -1647,7 +1640,7 @@ input:last-of-type
 {
         position: relative;
         display: block;
-        padding: .5rem .75rem;
+       
         margin-left: -1px;
         margin-top: 10px;
         line-height: 1.25;

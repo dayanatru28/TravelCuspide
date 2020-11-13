@@ -16,6 +16,7 @@
             </center>
         </div>
 
+        
         <!--imagenes y mapa-->
         
         <div class="super-container" style=" background-color: #7e5e4; margin:5%">
@@ -35,9 +36,9 @@
                                             <div class="carousel-item active">
                                             <!-- Trae la informacion de las imagenes de cada lugar -->
                                             <?php 
-                                            foreach ($imagenesModel as $imagenModel){   
+                                            foreach ($imagenesModel as $imagenModel){ 
                                             ?>  
-                                                    <img class="d-block w-100" src="<?php echo base_url(); echo $imagenModel[0]['direcFoto']?>" alt="Second slide">
+                                                    <img class="d-block w-100" src="http://localhost/AdminTravelCode/<?php echo $imagenModel[0]['direcFoto']?>" alt="Second slide">
                                                     <div class="carousel-caption d-none d-md-block">
                                                   </div>
                                             </div>
@@ -47,7 +48,7 @@
                                                 for ($i=1; $i < count($imagenModel) ; $i++) {    
                                             ?>      
                                                 <div class="carousel-item">
-                                                    <img class="d-block w-100" src="<?php echo base_url(); echo $imagenModel[$i]['direcFoto']?>" alt="Second slide">
+                                                    <img class="d-block w-100" src="http://localhost/AdminTravelCode/<?php echo $imagenModel[$i]['direcFoto']?>" alt="Second slide">
                                                     <div class="carousel-caption d-none d-md-block">
                                                     </div>
                                                 </div>
@@ -69,6 +70,7 @@
                             </li>
                         </div>
 
+                     <!-- Trae la informacion de la direccion del mapa -->
                         <div class="col-sm-3" style="width: 300; height: 300;">
                             <iframe src="<?php echo $salidaModel['0']['dirMapa']?>" frameborder="0" style="border:0" allowfullscreen></iframe>
 
@@ -101,6 +103,35 @@
         <div class="container">
                     <h3 class="search_title"><?php echo $sitioInteresModel[$i]['nombreSitio']?></h3>
                     <h4 class="search_title"><?php echo $sitioInteresModel[$i]['desSitio']?></h4> <br>
+        </div>
+        <?php } } ?>
+   
+    <br><br><br>
+
+    <!--Actividades de Ecoturismo-->
+
+    <div class="super-container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title text-center">
+                    <h1>Actividades de Ecoturismo</h1></br>
+                    <h4> Estas son las actividades que se pueden realizar: </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <?php 
+        //Obtengo la informacion de los sitios de interes
+        foreach ($ActividadesTurModel as $actividad){ 
+            for ($i=0; $i < count($actividad) ; $i++) {    
+        ?>
+
+        <div class="container">
+                    <h3 class="search_title"><?php echo $actividad[$i]['nombreActividad']?></h3>
+                    <h4 class="search_title"><?php echo $actividad[$i]['desActividad']?></h4> <br>
         </div>
         <?php } } ?>
    

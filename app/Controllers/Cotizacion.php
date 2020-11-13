@@ -80,7 +80,7 @@ class Cotizacion extends BaseController
         $email = \Config\Services::email();
 
         $email->setTo($to);
-        $email->setFrom('leidy28ortega@gmail.com', 'Confirm Registration');
+        $email->setFrom('leidy28ortega@gmail.com', 'Registro de una cotizacion con Cuspide');
         
         $email->setSubject($subject);
         $email->setMessage($message);
@@ -120,7 +120,7 @@ class Cotizacion extends BaseController
         $email = \Config\Services::email();
 		//enviar a
 		$email->setTo($to);
-        $email->setFrom('leidy28ortega@gmail.com', 'Confirm Registration');
+        $email->setFrom('leidy28ortega@gmail.com', 'registro de cotizacion con cuspide');
 		// Asunto
 		$email->setSubject($subject);
 		//Mensaje

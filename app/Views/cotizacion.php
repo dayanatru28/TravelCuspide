@@ -80,7 +80,7 @@
                             <?php 
                                 echo form_label('Dia de salida prevista:','diaSalida');?>
                                 <br>
-                                <input type="date" name="trip-start" id="start" value="<?php echo set_value('trip-start'); ?> " min="2020-01-01" max="2021-12-31" required="" />
+                                <input type="date" name="trip-start" id="start" value="<?php echo set_value('trip-start'); ?> " min="<?php echo date("Y-m-d"); ?>" max="2021-12-31" required="" />
                         </div> 
                         <div class="form-group col-md-10">
                             <?php 
