@@ -82,21 +82,25 @@
     </div>
     <!--Sitios de interes-->
 
-    <div class="super-container">
-        <div class="row">
-            <div class="col">
-                <div class="section_title text-center">
-                    <h1>Sitios de interes</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br>
-
     <?php 
         //Obtengo la informacion de los sitios de interes
         foreach ($sitiosInteresModel as $sitioInteresModel){ 
+            //Confirmo si hay o no lugares de interes para mostrar o no el letrero
+            if($sitioInteresModel!=null){ ?>
+                <br>
+                <div class="super-container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="section_title text-center">
+                                <h1>Sitios de interes</h1> </br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        <?php    }
+
+            
             for ($i=0; $i < count($sitioInteresModel) ; $i++) {    
         ?>
 
@@ -106,34 +110,33 @@
         </div>
         <?php } } ?>
    
-    <br><br><br>
-
-    <!--Actividades de Ecoturismo-->
-
-    <div class="super-container">
-        <div class="row">
-            <div class="col">
-                <div class="section_title text-center">
-                    <h1>Actividades de Ecoturismo</h1></br>
-                    <h4> Estas son las actividades que se pueden realizar: </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br>
-
+    
+<!--Actividades de Ecoturismo-->
     <?php 
-        //Obtengo la informacion de los sitios de interes
+        //Obtengo la informacion de las actividades ecoturisticas
         foreach ($ActividadesTurModel as $actividad){ 
-            for ($i=0; $i < count($actividad) ; $i++) {    
-        ?>
-
-        <div class="container">
-                    <h3 class="search_title"><?php echo $actividad[$i]['nombreActividad']?></h3>
-                    <h4 class="search_title"><?php echo $actividad[$i]['desActividad']?></h4> <br>
-        </div>
-        <?php } } ?>
+            //Confirmo si la consulta esta vacia o tiene informacion para mostrar el letrero
+            if($actividad!=null) {?>
+                
+                <br>
+                <div class="super-container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="section_title text-center">
+                                <h1>Actividades de Ecoturismo</h1></br>
+                                <h4> Estas son las actividades que se pueden realizar: </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+               <?php } 
+            //Mediante el for traigo toda la informacion de las actividades
+            for ($i=0; $i < count($actividad) ; $i++) { ?>
+                <div class="container">
+                            <h3 class="search_title"><?php echo $actividad[$i]['nombreActividad']?></h3>
+                            <h4 class="search_title"><?php echo $actividad[$i]['desActividad']?></h4> <br>
+                </div>
+                <?php } } ?>
    
     <br><br><br>
 
