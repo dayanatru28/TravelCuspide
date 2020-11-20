@@ -2,25 +2,17 @@
 
 use CodeIgniter\Controller;
 use App\Models\SalidasModel;
-use App\Models\TipoSalidaModel;
 use App\Models\TipoPlanModel;
 
 class Home extends BaseController
 {
 	public function index()
 	{
-		
-		
-		$TiposalidasModel= new TipoSalidaModel();
-		//Buscador tipo Salida
-		$tiposSalida= $TiposalidasModel->findColumn('nombreTipoSalida');
-		$tiposSalida= array('tiposSalida'=>$tiposSalida);
 
 		$TipoplanModel= new TipoPlanModel();
-		//Buscador tipo Salida
-		$tiposPlan= $TipoplanModel->findColumn('nombreTipoPlan');
+		//Buscador tipo Plan o actividad deportiva
+		$tiposPlan= $TipoplanModel->findAll();
 		$tiposPlan= array('tiposPlan'=>$tiposPlan);
-
 
 		//Busqueda de salidas por ubicacion (Huila o Nacional)
 		//Huila id 1
@@ -33,7 +25,6 @@ class Home extends BaseController
 
 		$datos['salidasHuilaModel']=$salidasHuilaModel;
 		$datos['salidasNacionalModel']=$salidasNacionalModel;
-		$datos['tiposSalida']=$tiposSalida;
 		$datos['tiposPlan']=$tiposPlan;
 
 		$estructura=view('head').view('header').view('index',$datos).view('footer');

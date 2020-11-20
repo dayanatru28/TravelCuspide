@@ -17,7 +17,7 @@
     <div class="container" style=" background-color: #f3f5f7;">
         <br>
         <center>
-            <h4 class="search_title">Realice una busqueda dependiendo de las caracteristicas de su viaje </h4>
+            <h4 class="search_title">Seleccion una actividad deportiva que quiere realizar en su viaje </h4>
         </center>
 
         <?php
@@ -25,21 +25,22 @@
         ?>  
         <form>
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <?php 
-                    echo form_label('Tipo de Salida','tipoSalida');
-                    ?></br><?php
-                    echo form_dropdown('tipoSalida', $tiposSalida);
-                    ?>
-                </div>
-
-                <div class="form-group col-md-5">
-                    <?php 
-                    echo form_label('Tipo de Plan','tipoPlan');
-                    ?></br><?php
-                    echo form_dropdown('tipoPlan', $tiposPlan);
-                    ?>
-                </div>  
+                <div class="form-group col-md-11">
+                        <?php 
+                        echo form_label('Actividad Deportiva','idPlan');
+                        ?></br>
+                        <!-- De la consulta realizada selecciono las actividades deportivas disponibles por un ciclo -->
+                        <select class="form-control" name="idPlan" id="idPlan">
+                        <?php  foreach($tiposPlan as $plan){
+                                    for ($i=0; $i < count($plan) ; $i++) {                           
+                        ?>
+                            <option value="<?php echo($plan[$i]["idTipoPlan"])?>"><?php echo($plan[$i]["nombreTipoPlan"])?></option>
+                        <?php
+                                    }
+                             }
+                        ?>
+                        </select>
+                </div> 
                 
                 <div class="form-group col-md-1">
                     <label for="inputPersonas">Busqueda</label>

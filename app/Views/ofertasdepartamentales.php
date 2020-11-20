@@ -34,6 +34,8 @@
             <div class="row" style="width: 100%;">
             <!--Colocar informacion traida de la base de datos -->
             <?php
+
+        
             foreach ($salidasModel as $salidaModel){ ?>
                 <div class="col-sm-4" style="margin-top:3%">
                     <li class="cards__item">
