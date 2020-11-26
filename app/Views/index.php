@@ -25,28 +25,22 @@
         ?>  
         <form>
             <div class="form-row">
-                <div class="form-group col-md-11">
+                <div class="form-group col-md-12">
+                <center>
                         <?php 
-                        echo form_label('Actividad Deportiva','idPlan');
                         ?></br>
                         <!-- De la consulta realizada selecciono las actividades deportivas disponibles por un ciclo -->
-                        <select class="form-control" name="idPlan" id="idPlan">
-                        <?php  foreach($tiposPlan as $plan){
+                        <?php foreach($tiposPlan as $plan){
                                     for ($i=0; $i < count($plan) ; $i++) {                           
                         ?>
-                            <option value="<?php echo($plan[$i]["idTipoPlan"])?>"><?php echo($plan[$i]["nombreTipoPlan"])?></option>
+                        <a class="btn btn-dark " href="<?php echo base_url(); ?>/ofertasBuscador/mostrar?idPlan=<?php echo($plan[$i]["idTipoPlan"])?>"  role="button"><?php echo($plan[$i]["nombreTipoPlan"])?></a>
                         <?php
                                     }
                              }
                         ?>
-                        </select>
+                </center>
                 </div> 
                 
-                <div class="form-group col-md-1">
-                    <label for="inputPersonas">Busqueda</label>
-                    <?php echo form_submit('mostrar','Buscar','class="btn btn-danger"'); ?>
-                </div> 
-
             </div>
         </form>
         <?php echo form_close(); ?>
@@ -83,7 +77,7 @@
                     <li class="cards__item">
                         <div class="card">
                             <div id="carousel1" class="carousel slide" data-ride="carousel" style="max-width:100%; ">
-                                <div class="carousel-inner" style="width: 100%;height: 400px">
+                                <div class="carousel-inner" style="width: 100%;height:auto">
                                     <div class="carousel-item active">
                                             <!-- Trae la informacion de las imagenes de cada lugar -->
                                             <?php 

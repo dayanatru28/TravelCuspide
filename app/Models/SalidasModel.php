@@ -10,6 +10,6 @@ class SalidasModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['idClasificacion', 'nombreSalida','desSalida','dirMapa','fotoSalida','incluyeSalida','noIncluyeSalida','tipoDificultad','tipoPlan'];
+    protected $allowedFields = ['idClasificacion', 'nombreSalida','desSalida','dirMapa','fotoSalida','incluyeSalida','noIncluyeSalida'];
 
 }

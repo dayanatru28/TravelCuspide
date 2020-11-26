@@ -347,7 +347,7 @@ transition: all 200ms ease;
 .logo_container
 {
 	display: inline-block;
-	padding-left: 50px;
+	padding-left: 20px;
 }
 .logo span
 {
@@ -668,7 +668,7 @@ transition: all 200ms ease;
 .home
 {
 	width: 100%;
-	height: 447px;
+	height: 500px;
 }
 
 .home_background_container
@@ -1641,12 +1641,12 @@ input:last-of-type
         position: relative;
         display: block;
        
-        margin-left: -1px;
-        margin-top: 10px;
-        line-height: 1.25;
+        margin-left: 1%;
+        margin-top: 50%;
+        line-height: 5px;
         color: #fff;
         background-color: #ffb606;
-        border: 1px solid #ffb606;
+        border: 20px solid #ffb606;
 }
 
 

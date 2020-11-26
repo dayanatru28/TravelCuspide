@@ -92,7 +92,8 @@
                     <div class="row">
                         <div class="col">
                             <div class="section_title text-center">
-                                <h1>Sitios de interes</h1> </br>
+                                <h1>Sitios de interes</h1>
+                                <h4>Estas son los lugares que se pueden visitar en este plan: </h4> <br>
                             </div>
                         </div>
                     </div>
@@ -141,8 +142,12 @@
     <br><br><br>
 
     <!-- incluye o no incluye-->
+    <?php 
+    if($salidaModel['0']['incluyeSalida']!=null || $salidaModel['0']['noIncluyeSalida']!=null){
+
+    ?>
     
-    <div class="container">
+        <div class="container">
                   <nav>
                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                       <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">INCLUYE</a>
@@ -164,6 +169,7 @@
                     </div>
                   </div>                
         </div>
+        <?php } ?>
       </div>
 </div>
  <br> <br>   

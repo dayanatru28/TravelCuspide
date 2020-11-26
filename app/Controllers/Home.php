@@ -22,7 +22,8 @@ class Home extends BaseController
 		//Nacional id 2
 		$salidasNacionalModel= $salidasModel->where('idClasificacion','2')->findAll();
 		$salidasNacionalModel=array('salidasNacionalModel'=>$salidasNacionalModel);
-
+		
+		//Agrego las consultas en un solo arreglo
 		$datos['salidasHuilaModel']=$salidasHuilaModel;
 		$datos['salidasNacionalModel']=$salidasNacionalModel;
 		$datos['tiposPlan']=$tiposPlan;
